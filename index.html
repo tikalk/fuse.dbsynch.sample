@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta content="Shalom K" name="author">
+  <meta content="sample application spring JTA activemq" name="description">
+</head><body>
+
+
+	<meta http-equiv="CONTENT-TYPE" content="text/html; charset=ISO-8859-1"><title>dbsynch sample</title><meta name="GENERATOR" content="OpenOffice.org 3.1  (Linux)">
+	
+	
+	<style type="text/css">
+	<!--
+		@page { margin: 1in }
+		P { margin-bottom: 0.08in }
+		A:link { so-language: zxx }
+	-->
+	</style>
+
+<p style="margin-bottom: 0in; font-style: normal; font-weight: normal;">
+<font face="Times New Roman, serif">dbsynch sample app</font></p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-top: 0.31in; margin-bottom: 0.04in;"><font face="Liberation Sans, Arial, sans-serif"><font style="font-size: 17pt;" size="5"><b>preface</b></font></font></p>
+<p style="margin-bottom: 0in;">this sample demonstrates a spring ,
+activemq and MySql application using JTA transactions.</p>
+<p style="margin-bottom: 0in;">the application is meant to copy a
+database table from one database to another using JMS as the
+transport.</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-bottom: 0in;">there are three components:</p>
+<p style="margin-bottom: 0in;">server - this is the activemq broker,
+activemq is embedded in a spring context.</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-bottom: 0in;">producer - this is a client to the
+broker, it reads rows from a database table,source_table, and for
+every row sends a JMS message to a queue called source-queue.</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-bottom: 0in;">collector - this is a client that reads
+messages from source-queue and for every message creates a database
+row in a table called dest_table. 
+</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-top: 0.31in; margin-bottom: 0.04in;"><font face="Liberation Sans, Arial, sans-serif"><font style="font-size: 17pt;" size="5"><b>The
+stack used in the sample</b></font></font></p>
+<p style="margin-bottom: 0in;">Spring as a container.</p>
+<p style="margin-bottom: 0in;">Activemq</p>
+<p style="margin-bottom: 0in;">MySql</p>
+<p style="margin-bottom: 0in;">Atomikos</p>
+<p style="margin-top: 0.31in; margin-bottom: 0.04in;"><font face="Liberation Sans, Arial, sans-serif"><font style="font-size: 17pt;" size="5"><b>XA
+tansactions</b></font></font></p>
+<p style="margin-bottom: 0in;">this sample shows two implementations
+to manage jms and jdbc resources in one transaction.</p>
+<p style="margin-bottom: 0in;">1)</p>
+<p style="margin-bottom: 0in;">A non xa transaction where both
+resources are just committed at the same time, but its not XA and can
+still fail.</p>
+<p style="margin-bottom: 0in;">2)</p>
+<p style="margin-bottom: 0in;">JTA XA transactions using Atomikos,
+<a href="http://www.atomikos.com/Main/WebHome"><font color="#000080"><span lang="zxx"><u>http://www.atomikos.com/Main/WebHome</u></span></font></a></p>
+<p style="margin-bottom: 0in;">see the spring files in producer and
+collector projects , nonxa-XX and atomikos-xa-XX</p>
+<p style="margin-bottom: 0in;">things to remember with JTA:</p>
+<p style="margin-bottom: 0in;">the data base ,driver and data source
+must be XA enabled.</p>
+<p style="margin-bottom: 0in;">Performance is poor with XA.</p>
+<p style="margin-bottom: 0in;">Many data bases do not fully implement
+JTA.</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-top: 0.31in; margin-bottom: 0.04in;"><font face="Liberation Sans, Arial, sans-serif"><font style="font-size: 17pt;" size="5"><b>build</b></font></font></p>
+<p style="margin-bottom: 0in;">this is a maven project.</p>
+<p style="margin-bottom: 0in;">to build the project, from the top most
+directory,where the parent pom is, execute 'mvn clean install'</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-bottom: 0in;">the projects are:</p>
+<ol><li><p style="margin-bottom: 0in;">server - this is the server
+	project mainly used to embed activemq in a spring context.activemq
+	can also be run out of the box, but embedding it in a spring
+	application will make it easier to add functionality, for example we
+	can add beans that connect to the broker with VM transport ,more
+	control on activemq properties.</p>
+</li></ol>
+<p style="margin-bottom: 0in;">server-runtime - creates a runtime
+directory for the server.</p>
+<p style="margin-bottom: 0in;">common - a project with common classes
+for the three components.</p>
+<p style="margin-bottom: 0in;">producer - this is the client that
+reads the source table and sends a JMS message for every row.</p>
+<p style="margin-bottom: 0in;">producer-runtime - creates a runtime
+directory for the producer.collector - this is the client that reads
+the messages with the source rows and inserts rows to the dest_table.</p>
+<p style="margin-bottom: 0in;">collector &#8211; the client that reads the
+jms queue and inserts rows to the DB</p>
+<p style="margin-bottom: 0in;">collector-runtime - creates the runtime
+directory for the collector.</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-top: 0.31in; margin-bottom: 0.04in;"><font face="Liberation Sans, Arial, sans-serif"><font style="font-size: 17pt;" size="5"><b>IDE</b></font></font></p>
+<p style="margin-bottom: 0in;">to load to intelij IDEA just do: file
+-&gt; open project , and select the parent pom, idea will do the
+reast.</p>
+<p style="margin-bottom: 0in;">to load to eclipse execute 'mvn
+eclipse:eclipse' from the top directory and load the projects to
+eclipse.</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+<p style="margin-top: 0.31in; margin-bottom: 0.04in;"><font face="Liberation Sans, Arial, sans-serif"><font style="font-size: 17pt;" size="5"><b>Unit
+tests</b></font></font></p>
+<p style="margin-bottom: 0in;">Unit tests with xa will work only with
+a data base that supports xa, also, an activemq broker must run in
+order for the unit tests to run. To build without unit tests run
+maven with</p>
+<p style="margin-bottom: 0in;">-Dmaven.test.skip=true</p>
+<p style="margin-bottom: 0in;">Todo: some kind of integration tests.
+And more extensive unit tests.</p>
+<p style="margin-bottom: 0in;"><br>
+</p>
+</body></html>

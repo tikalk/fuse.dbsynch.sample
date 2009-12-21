@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- enables @Transactional annotation -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!-- enable configuration with annotations, like @PostConstruct -->
+    <context:annotation-config/>
+
+
+    <bean id="main" class="com.tikal.dbsynch.producer.Main">
+        <property name="producer" ref="producer"/>
+    </bean>
+
+
+    <bean id="producer" class="com.tikal.dbsynch.producer.Producer">
+        <!--<property name="jmsTransactionTemplate" ref="jmsTransactionTemplate"/>-->
+        <property name="rowsLimit" value="1"/>
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+        <property name="jmsTemplate" ref="jmsTemplate"/>
+    </bean>
+
+
+    <bean id="propertyPlaceholder"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>producer.properties</value>
+                <value>db.properties</value>
+                <value>atomikos.properties</value>
+            </list>
+        </property>
+
+        <!-- these are true because we test a few implementation,
+            they should be false otherwise.
+        -->
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+
+
+</beans>

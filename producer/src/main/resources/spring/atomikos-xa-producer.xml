@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+    <!--
+    see: http://www.atomikos.com/Main/WebHome
+    jta properties for atomikos: http://www.atomikos.com/Documentation/JtaProperties
+      1)
+      if only jms template is transactional the jdbc is like a local Connection transaction
+      and is committed before the method ends.
+      2)
+      
+        
+    -->
+
+    <import resource="classpath:/spring/spring-config-producer.xml"/>
+
+
+    <bean id="XaFactory" class="org.apache.activemq.ActiveMQXAConnectionFactory">
+        <property name="brokerURL" value="${broker.url}"/>
+    </bean>
+
+    <!-- Configure the JMS connector; call init to register for recovery! -->
+    <bean id="realConnectionFactory" class="com.atomikos.jms.AtomikosConnectionFactoryBean"
+          init-method="init">
+        <property name="uniqueResourceName" value="JMS-Producer"/>
+        <property name="xaConnectionFactory" ref="XaFactory"/>
+    </bean>
+
+    <!-- connection factory , yu may consider a pool , think about it.. it not always needed -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="realConnectionFactory"/>
+    </bean>
+
+    <!-- Construct Atomikos UserTransactionManager, needed to configure Spring -->
+    <bean id="atomikosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager"
+          init-method="init" destroy-method="close">
+        <!--  when close is called, should we force transactions to terminate or not? -->
+        <property name="forceShutdown" value="true"/>
+    </bean>
+
+    <!-- Also use Atomikos UserTransactionImp, needed to configure Spring  -->
+    <bean id="atomikosUserTransaction" class="com.atomikos.icatch.jta.UserTransactionImp">
+        <property name="transactionTimeout" value="${xa-atomikos.transaction-timeout}"/>
+    </bean>
+
+    <!-- Configure the Spring framework to use JTA transactions from Atomikos -->
+    <bean id="transactionManager"
+          class="org.springframework.transaction.jta.JtaTransactionManager">
+        <property name="transactionManager" ref="atomikosTransactionManager"/>
+        <property name="userTransaction" ref="atomikosUserTransaction"/>
+    </bean>
+
+    <!-- Configure the JMS template used to send messages -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="defaultDestinationName" value="${source.queue}"/>
+        <property name="sessionTransacted" value="true"/>
+    </bean>
+
+
+
+
+    <!-- data source -->
+
+    <bean id="dataSource"
+          class="com.atomikos.jdbc.AtomikosDataSourceBean" init-method="init"
+          destroy-method="close">
+        <property name="uniqueResourceName">
+            <value>MYDB</value>
+        </property>
+        <property name="xaDataSourceClassName">
+            <value>${xa.atomikos.datasource.classname}</value>
+        </property>
+        <property name="xaProperties">
+           <value>URL=${xa.atomikos.jdbc.url}</value>
+          </property>
+
+        <!--<property name="xaProperties">-->
+            <!--<props>-->
+                <!--<prop key="user">demo</prop>-->
+                <!--<prop key="portNumber">8000</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+        <property name="poolSize">
+            <value>1</value>
+        </property>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+
+</beans>

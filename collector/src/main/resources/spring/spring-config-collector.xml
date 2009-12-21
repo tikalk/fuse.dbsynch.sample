@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+    <!-- enables @Transactional annotation -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+    <bean id="messageListener" class="com.tikal.dbsynch.collector.CollectorListener">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="propertyPlaceholder"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+             <list>
+                 <value>collector.properties</value>
+                 <value>db.properties</value>
+                 <value>atomikos.properties</value>
+             </list>
+         </property>
+
+         <!-- these are true because we test a few implementation,
+             they should be false otherwise.
+         -->
+         <property name="ignoreResourceNotFound" value="true"/>
+         <property name="ignoreUnresolvablePlaceholders" value="true"/>
+     </bean>
+
+
+</beans>

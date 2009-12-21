@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--
+     1)
+     in the collector we want that the jms message will be acknoldge
+     only if the DB commit succeeds,otherwise we want the message to remain in
+     the queue.
+     so, two option:
+     if the jmsContainer.sessionTransacted is true the listener will
+     participate in the DataSourceTransactionManager's transaction but not XA transaction.
+     the jms session will be committed AFTER the jdbc connection was committed.
+     which is good for the collector, if the DB commit failed the message will remain
+     in the queue. this is how the example works.
+     option two is to set sessionTransacted to false and sessionAcknowledgeMode to
+     CLIENT_ACKNOWLEDGE and acknowledge the message only after successful commit.
+     see the code in CollectorListener
+
+
+    -->
+
+    <import resource="classpath:/spring/spring-config-collector.xml"/>
+
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <bean id="connectionFactory"
+          class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL"
+                          value="${broker.url}"/>
+            </bean>
+        </property>
+        <property name="sessionCacheSize" value="10"/>
+        <property name="cacheProducers" value="false"/>
+    </bean>
+
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="defaultDestinationName" value="${source.queue}"/>
+    </bean>
+
+
+    <bean id="jmsContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destinationName" value="${source.queue}"/>
+        <property name="messageListener" ref="messageListener"/>
+        <!-- this will cause the session to participate in
+            the DataSourceTransactionManager but its not xa transaction,
+             the jms session will be committed AFTER the jdbc connection was committed.
+             which is good for the collector, if the DB commit failed the message will
+             remain in the queue -->
+        <property name="sessionTransacted" value="true"/>
+        <!-- if the session is transacted the message acknowledge in handled in session commit -->
+        <!--<property name="sessionAcknowledgeMode">-->
+            <!--<util:constant static-field="javax.jms.Session.CLIENT_ACKNOWLEDGE"/>-->
+        <!--</property>-->
+
+        <!-- use this only for debugging, or start the listener yourself -->
+        <!--<property name="autoStartup" value="false"/>-->
+    </bean>
+
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${db.driverClassName}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="initialSize" value="${db.initialPoolSize}"/>
+    </bean>
+
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+</beans>

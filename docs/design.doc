@@ -1,0 +1,125 @@
+{\rtf1\ansi\deff1\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset128 Liberation Serif{\*\falt Times New Roman};}{\f1\froman\fprq0\fcharset0 Times New Roman;}{\f2\fswiss\fprq2\fcharset128 Liberation Sans{\*\falt Arial};}{\f3\fswiss\fprq0\fcharset0 Liberation Sans{\*\falt Arial};}{\f4\fmodern\fprq1\fcharset0 Courier New;}{\f5\froman\fprq0\fcharset0 Times New Roman;}{\f6\fnil\fprq2\fcharset128 DejaVu Sans;}}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue128;\red128\green128\blue128;}
+{\stylesheet{\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\snext1 Normal;}
+{\s2\sb240\sa120\keepn\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af6\afs28\lang255\ltrch\dbch\af6\langfe255\hich\f2\fs28\lang1033\loch\f2\fs28\lang1033\sbasedon1\snext3 Heading;}
+{\s3\sa120\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon1\snext3 Body Text;}
+{\s4\sa120\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon3\snext4 List;}
+{\s5\sb120\sa120\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ai\ltrch\dbch\langfe255\hich\fs24\lang1033\i\loch\fs24\lang1033\i\sbasedon1\snext5 caption;}
+{\s6\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon1\snext6 Index;}
+{\s7\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon1\snext1 toc 1;}
+{\s8\li1440\ri0\lin1440\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon1\snext1 toc 2;}
+{\s9\li2160\ri0\lin2160\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon1\snext1 toc 3;}
+{\s10\li2880\ri0\lin2880\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon1\snext1 toc 4;}
+{\s11\cf0\tx431{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\sbasedon12\snext1 Numbered Heading 1;}
+{\s12\sb440\sa60\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af3\afs34\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs34\lang1033\b\loch\f3\fs34\lang1033\b\sbasedon1\snext1 heading 1;}
+{\s13\cf0\tx431{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\sbasedon14\snext1 Numbered Heading 2;}
+{\s14\sb440\sa60\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af3\afs28\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs28\lang1033\b\loch\f3\fs28\lang1033\b\sbasedon1\snext1 heading 2;}
+{\s15\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Square List;}
+{\s16\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon1\snext1 Lower Roman List;}
+{\s17\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Diamond List;}
+{\s18\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Numbered List;}
+{\s19\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Triangle List;}
+{\s20\cf0\tx431{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\sbasedon21\snext1 Numbered Heading 3;}
+{\s21\sb440\sa60\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af3\afs24\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs24\lang1033\b\loch\f3\fs24\lang1033\b\sbasedon1\snext1 heading 3;}
+{\s22\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Dashed List;}
+{\s23\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\sbasedon18\snext1 Upper Roman List;}
+{\s24\sb440\sa60\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af3\afs24\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs24\lang1033\b\loch\f3\fs24\lang1033\b\sbasedon1\snext1 heading 4;}
+{\s25\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Heart List;}
+{\s26\sb240\sa120\cf0\qc{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af3\afs32\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs32\lang1033\b\loch\f3\fs32\lang1033\b\sbasedon1\snext1 Contents Header;}
+{\s27\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\sbasedon18\snext1 Upper Case List;}
+{\s28\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Bullet List;}
+{\s29\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Hand List;}
+{\s30\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Tick List;}
+{\s31\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\sbasedon18\snext1 Lower Case List;}
+{\s32\li1440\ri1440\lin1440\rin1440\fi0\sa120\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon1\snext1 Block Text;}
+{\s33\cf0\tx1584{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon11\snext1 Section Heading;}
+{\s34\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Implies List;}
+{\s35\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Box List;}
+{\s36\li720\ri0\lin720\rin0\fi-431\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033\snext1 Star List;}
+{\s37\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\af4\afs24\lang255\ltrch\dbch\af4\langfe255\hich\f4\fs24\lang1033\loch\f4\fs24\lang1033\sbasedon1\snext1 Plain Text;}
+{\s38\cf0\tx1584{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon11\snext1 Chapter Heading;}
+{\*\cs40\cf0\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033 RTF_Num 2 1;}
+{\*\cs41\cf0\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033\sbasedon42 Endnote Text;}
+{\*\cs42\cf0\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 Normal;}
+{\*\cs43\cf0\rtlch\af1\afs20\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs20\lang1033\loch\f1\fs20\lang1033 Reference;}
+{\*\cs44\cf0\rtlch\af1\afs20\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs20\lang1033\loch\f1\fs20\lang1033 WW-Reference;}
+{\*\cs45\cf0\rtlch\afs20\lang255\ltrch\dbch\langfe255\hich\fs20\lang1033\loch\fs20\lang1033\sbasedon42 Footnote Text;}
+{\*\cs46\cf0\rtlch\af1\afs20\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs20\lang1033\loch\f1\fs20\lang1033 WW-Reference1;}
+{\*\cs47\cf0\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang1033\loch\f1\fs24\lang1033 Endnote Symbol;}
+{\*\cs48\cf2\ul\ulc0\rtlch\af1\afs24\lang255\ltrch\dbch\af1\langfe255\hich\f1\fs24\lang255\loch\f1\fs24\lang255 Internet link;}
+}{\*\listtable{\list\listtemplateid1\listsimple
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'00.;}{\levelnumbers\'01;}\fi-431\li720}
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'01.;}{\levelnumbers\'01;}\fi-431\li1440}
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'02.;}{\levelnumbers\'01;}\fi-431\li2160}
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'03.;}{\levelnumbers\'01;}\fi-431\li2880}
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'04.;}{\levelnumbers\'01;}\fi-431\li3600}
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'05.;}{\levelnumbers\'01;}\fi-431\li4320}
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'06.;}{\levelnumbers\'01;}\fi-431\li5040}
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'07.;}{\levelnumbers\'01;}\fi-431\li5760}
+{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'08.;}{\levelnumbers\'01;}\fi-431\li6480}
+{\*\soutlvl{\listlevel\levelnfc0\leveljc0\levelstartat1\levelfollow0{\leveltext \'02\'09.;}{\levelnumbers\'01;}\fi-431\li7200}}{\listname RTF_Num 2;}\listid1}
+}{\listoverridetable{\listoverride\listid1\listoverridecount0\ls0}}
+
+{\info{\creatim\yr0\mo0\dy0\hr0\min0}{\revtim\yr0\mo0\dy0\hr0\min0}{\printim\yr0\mo0\dy0\hr0\min0}{\comment StarWriter}{\vern3100}}\deftab720
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse195\pgwsxn12240\pghsxn15840\marglsxn1440\margrsxn1440\margtsxn1440\margbsxn1440\pgdscnxt0 Standard;}
+{\pgdsc1\pgdscuse195\pgwsxn12240\pghsxn15840\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\pgdscnxt1 Endnote;}}
+{\*\pgdscno0}\paperh15840\paperw12240\margl1440\margr1440\margt1440\margb1440\sectd\sbknone\pgwsxn12240\pghsxn15840\marglsxn1440\margrsxn1440\margtsxn1440\margbsxn1440\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnar
+\pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\ql\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 dbsynch sample app}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\ql\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s12\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\sb440\sa60\ql\rtlch\af3\afs34\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs34\lang1033\b\loch\f3\fs34\lang1033\b {\rtlch \ltrch\loch\f3\fs34\lang1033\i0\b preface}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\ql\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 this sample demonstrates a spring , activemq and MySql application using JTA transactions.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 the application is meant to copy a database table from one database to another using JMS as the transport.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 there are three components:}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 server - this is the activemq broker, activemq is embedded in a spring context.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 producer - this is a client to the broker, it reads rows from a database table,source_table, and for every row sends a JMS message to a queue called source-queue.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 collector - this is a client that reads messages from source-queue and for every message creates a database row in a table called dest_table. }
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s12\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\sb440\sa60\rtlch\af3\afs34\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs34\lang1033\b\loch\f3\fs34\lang1033\b {\rtlch \ltrch\loch\f3\fs34\lang1033\i0\b The stack used in the sample}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 Spring as a container.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 Activemq}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 MySql}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 Atomikos}
+\par \pard\plain \ltrpar\s12\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\sb440\sa60\rtlch\af3\afs34\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs34\lang1033\b\loch\f3\fs34\lang1033\b {\rtlch \ltrch\loch\f3\fs34\lang1033\i0\b XA tansactions}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 this sample shows two implementations to manage jms and jdbc resources in one transaction.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 1)}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 A non xa transaction where both resources are just committed at the same time, but its not XA and can still fail.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 2)}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 JTA XA transactions using Atomikos, {\field{\*\fldinst HYPERLINK "http://www.atomikos.com/Main/WebHome" }{\fldrslt \*\cs48\cf2\ul\ulc0\rtlch\ltrch\dbch\hich\f1\fs24\lang255\loch\f1\fs24\lang255 http://www.atomikos.com/Main/WebHome}}}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 see the spring files in producer and collector projects , nonxa-XX and atomikos-xa-XX}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 things to remember with JTA:}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 the data base ,driver and data source must be XA enabled.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 Performance is poor with XA.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 Many data bases do not fully implement JTA.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s12\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\sb440\sa60\ql\rtlch\af3\afs34\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs34\lang1033\b\loch\f3\fs34\lang1033\b {\rtlch \ltrch\loch\f3\fs34\lang1033\i0\b build}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\ql\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 this is a maven project.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 to build the project, from the top most directory,where the parent pom is, execute 'mvn clean install'}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 the projects are:}
+\par \pard\plain {\listtext\pard\plain \li720\ri0\lin720\rin0\fi-431\fs24 1.\tab}\ilvl0 \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\ls0\li720\ri0\lin720\rin0\fi-431\ql\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 server - this is the server project mainly used to embed activemq in a spring context.activemq can also be run out of the box, but embedding it in a spring application will make it easier to add functionality, for example we can add beans that connect to t
+he broker with VM transport ,more control on activemq properties.}
+\par \pard\plain {\listtext\pard\plain \li720\ri0\lin720\rin0\fi-431\fs24 2.\tab}\ilvl0 \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 server-runtime - creates a runtime directory for the server.}
+\par \pard\plain {\listtext\pard\plain \li720\ri0\lin720\rin0\fi-431\fs24 3.\tab}\ilvl0 \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 common - a project with common classes for the three components.}
+\par \pard\plain {\listtext\pard\plain \li720\ri0\lin720\rin0\fi-431\fs24 4.\tab}\ilvl0 \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 producer - this is the client that reads the source table and sends a JMS message for every row.}
+\par \pard\plain {\listtext\pard\plain \li720\ri0\lin720\rin0\fi-431\fs24 5.\tab}\ilvl0 \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 producer-runtime - creates a runtime directory for the producer.collector - this is the client that reads the messages with the source rows and inserts rows to the dest_table.}
+\par \pard\plain {\listtext\pard\plain \li720\ri0\lin720\rin0\fi-431\fs24 6.\tab}\ilvl0 \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 collector \'96 the client that reads the jms queue and inserts rows to the DB}
+\par \pard\plain {\listtext\pard\plain \li720\ri0\lin720\rin0\fi-431\fs24 7.\tab}\ilvl0 \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 collector-runtime - creates the runtime directory for the collector.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\ql\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s12\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\sb440\sa60\ql\rtlch\af3\afs34\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs34\lang1033\b\loch\f3\fs34\lang1033\b {\rtlch \ltrch\loch\f3\fs34\lang1033\i0\b IDE}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\ql\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 to load to intelij IDEA just do: file -> open project , and select the parent pom, idea will do the reast.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 to load to eclipse execute 'mvn eclipse:eclipse' from the top directory and load the projects to eclipse.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par \pard\plain \ltrpar\s12\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\sb440\sa60\rtlch\af3\afs34\lang255\ab\ltrch\dbch\af3\langfe255\hich\f3\fs34\lang1033\b\loch\f3\fs34\lang1033\b {\rtlch \ltrch\loch\f3\fs34\lang1033\i0\b Unit tests}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 Unit tests with xa will work only with a data base that supports xa, also, an activemq broker must run in order for the unit tests to run. To build without unit tests run maven with}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 -Dmaven.test.skip=true}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 {\rtlch \ltrch\loch\f1\fs24\lang1033\i0\b0 Todo: some kind of integration tests. And more extensive unit tests.}
+\par \pard\plain \ltrpar\s1\cf0{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\rtlch\afs24\lang255\ltrch\dbch\langfe255\hich\fs24\lang1033\loch\fs24\lang1033 
+\par }

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+    <!--
+    see: http://www.atomikos.com/Main/WebHome
+    jta properties for atomikos: http://www.atomikos.com/Documentation/JtaProperties
+     
+    the JmsTemplate here is used for unit tests, if you need to use it
+    remember it needs to run in a transaction scope
+    -->
+
+    <import resource="classpath:/spring/spring-config-collector.xml"/>
+
+
+    <bean id="XaFactory" class="org.apache.activemq.ActiveMQXAConnectionFactory">
+        <property name="brokerURL" value="${broker.url}"/>
+    </bean>
+
+    <!-- Configure the JMS connector; call init to register for recovery! -->
+    <bean id="realConnectionFactory" class="com.atomikos.jms.AtomikosConnectionFactoryBean"
+          init-method="init">
+        <property name="uniqueResourceName" value="JMS-Collector"/>
+        <property name="xaConnectionFactory" ref="XaFactory"/>
+    </bean>
+
+    <!-- connection factory , yu may consider a pool , think about it.. it not always needed ,
+        or use org.springframework.jms.connection.CachingConnectionFactory-->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="realConnectionFactory"/>
+    </bean>
+
+    <!-- Construct Atomikos UserTransactionManager, needed to configure Spring -->
+    <bean id="atomikosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager"
+          init-method="init" destroy-method="close">
+        <!--  when close is called, should we force transactions to terminate or not? -->
+        <property name="forceShutdown" value="true"/>
+    </bean>
+
+    <!-- Also use Atomikos UserTransactionImp, needed to configure Spring  -->
+    <bean id="atomikosUserTransaction" class="com.atomikos.icatch.jta.UserTransactionImp">
+        <property name="transactionTimeout" value="${xa-atomikos.transaction-timeout}"/>
+    </bean>
+
+    <!-- Configure the Spring framework to use JTA transactions from Atomikos -->
+    <bean id="transactionManager"
+          class="org.springframework.transaction.jta.JtaTransactionManager">
+        <property name="transactionManager" ref="atomikosTransactionManager"/>
+        <property name="userTransaction" ref="atomikosUserTransaction"/>
+    </bean>
+
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <!-- if this is true the jms message will be committed by the DataSourceTransactionManager if any -->
+        <property name="sessionTransacted" value="true"/>
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="defaultDestinationName" value="${source.queue}"/>
+    </bean>
+
+
+    <bean id="jmsContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destinationName" value="${source.queue}"/>
+        <property name="messageListener" ref="messageListener"/>
+        <!-- with jta this must be true -->
+        <property name="sessionTransacted" value="true"/>
+
+        <property name="concurrentConsumers" value="1"/>
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="receiveTimeout" value="5000"/>
+        <property name="recoveryInterval" value="6000"/>
+
+
+        <!-- use this only for debugging, or start the listener yourself -->
+        <!--<property name="autoStartup" value="false"/>-->
+    </bean>
+
+
+    <bean id="dataSource"
+          class="com.atomikos.jdbc.AtomikosDataSourceBean" init-method="init"
+          destroy-method="close">
+        <property name="uniqueResourceName">
+            <value>MYDB</value>
+        </property>
+        <property name="xaDataSourceClassName">
+            <value>${xa.atomikos.datasource.classname}</value>
+        </property>
+        <property name="xaProperties">
+            <value>URL=${xa.atomikos.jdbc.url}</value>
+        </property>
+
+        <!--<property name="xaProperties">-->
+        <!--<props>-->
+        <!--<prop key="user">demo</prop>-->
+        <!--<prop key="portNumber">8000</prop>-->
+        <!--</props>-->
+        <!--</property>-->
+        <property name="poolSize">
+            <value>1</value>
+        </property>
+    </bean>
+
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+</beans>

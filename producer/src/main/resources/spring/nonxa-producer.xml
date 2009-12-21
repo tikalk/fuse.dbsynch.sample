@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+    <!--
+        this adds transactions but NOT XA.
+        1)
+        if the producer is transactional with DataSourceTransactionManager and the
+        jmsTemplate of the producer is marked sessionTransacted=true, then the JMS session
+        will be commited AFTER the JDBC commit if it fails because the row was already
+        deleted but we don't have a message in the queue.
+        so better set sessionTransacted=false, this way the message is sent and the DB commit
+        happens after that. this way if the JDBC fails, we have a message in the queue but
+        the row is not deleted and will be processed again, which is better the the first case.
+        can also do that with beforeCommit hook, se example in Producer class
+
+        2)
+        in the same configuration, if the sending of the jms message is in
+        a transactional scope using TransactionTemplate then it behaves as
+        as inner local transaction and committed before the method ends.
+    -->
+
+    <import resource="classpath:/spring/spring-config-producer.xml"/>
+
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <!--<bean id="jmsTransactionManager" class="org.springframework.jms.connection.JmsTransactionManager">-->
+    <!--<property name="connectionFactory" ref="connectionFactory"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="jmsTransactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">-->
+    <!--<property name="transactionManager" ref="jmsTransactionManager"/>-->
+    <!--</bean>-->
+
+
+    <!-- jms template used for testing only -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <!-- if this is true the jms message will be committed by the
+            DataSourceTransactionManager AFTER the data base commit
+            which is not good for the producer -->
+        <!--<property name="sessionTransacted" value="true"/>-->
+        
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="defaultDestinationName" value="${source.queue}"/>
+    </bean>
+
+    <bean id="connectionFactory"
+          class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL"
+                          value="${broker.url}"/>
+            </bean>
+        </property>
+        <property name="sessionCacheSize" value="10"/>
+        <property name="cacheProducers" value="false"/>
+    </bean>
+
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${db.driverClassName}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="initialSize" value="${db.initialPoolSize}"/>
+    </bean>
+
+
+</beans>

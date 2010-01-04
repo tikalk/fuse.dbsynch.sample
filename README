@@ -1,7 +1,7 @@
 dbsynch sample app
 
 
-this sample demonstrates a spring , activemq and MySql application using JTA transactions.
+this sample demonstrates a spring , activemq and MySql application using XA(JTA) transactions.
 
 the application is meant to copy a database table from one database to another using JMS as the transport.
 

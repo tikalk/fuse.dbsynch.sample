@@ -5,30 +5,56 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
 
+    <import resource="classpath:spring/spring-config-notification.xml"/>
+
+
     <!-- enables @Transactional annotation -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
 
-    <bean id="messageListener" class="com.tikal.dbsynch.collector.CollectorListener">
+    <bean id="collectorListenerContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destinationName" value="${source.queue}"/>
+        <property name="messageListener" ref="collectorListener"/>
+        <!-- this will cause the session to participate in
+            the DataSourceTransactionManager but its not xa transaction,
+             the jms session will be committed AFTER the jdbc connection was committed.
+             which is good for the collector, if the DB commit failed the message will
+             remain in the queue -->
+        <property name="sessionTransacted" value="true"/>
+        <!-- if the session is transacted the message acknowledge in handled in session commit -->
+        <!--<property name="sessionAcknowledgeMode">-->
+        <!--<util:constant static-field="javax.jms.Session.CLIENT_ACKNOWLEDGE"/>-->
+        <!--</property>-->
+
+        <!-- use this only for debugging, or start the listener yourself -->
+        <!--<property name="autoStartup" value="false"/>-->
+    </bean>
+
+
+    <bean id="collectorListener" class="com.tikal.dbsynch.collector.CollectorListener">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
+
 
     <bean id="propertyPlaceholder"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
-             <list>
-                 <value>collector.properties</value>
-                 <value>db.properties</value>
-                 <value>atomikos.properties</value>
-             </list>
-         </property>
+            <list>
+                <value>collector.properties</value>
+                <value>db.properties</value>
+                <value>atomikos.properties</value>
+            </list>
+        </property>
 
-         <!-- these are true because we test a few implementation,
-             they should be false otherwise.
-         -->
-         <property name="ignoreResourceNotFound" value="true"/>
-         <property name="ignoreUnresolvablePlaceholders" value="true"/>
-     </bean>
+        <!-- these are true because we test a few implementation,
+            they should be false otherwise.
+        -->
+        <property name="systemPropertiesMode" value="2"/>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
 
 
 </beans>

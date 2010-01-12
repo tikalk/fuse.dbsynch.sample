@@ -8,16 +8,17 @@
                             http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!--Allows us to use system properties as variables in this configuration file -->
-    <!-- unfortunately there are three locations for properties files,
-            unter test resources for tests.
+    <!-- unfortunately there are two locations for properties files,
+            under test resources for tests.
             under command line for command line installation.
-            under the web war for web deployment.
             any new or changed property should be added to all files.
      -->
     <bean id="amqPlaceholderConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
-            <value>classpath:amq.properties</value>
+            <list>
+                <value>classpath:amq.properties</value>
+            </list>
         </property>
         <!-- never use environment variables -->
         <property name="searchSystemEnvironment" value="false"/>
@@ -27,8 +28,6 @@
                     static-field="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
         </property>
     </bean>
-
-
 
 
     <broker xmlns="http://activemq.apache.org/schema/core"
@@ -61,8 +60,11 @@
         <destinations>
             <queue id="sourceQueue"
                    physicalName="source.queue"/>
-            <queue id="responseQueue"
-                   physicalName="response.queue"/>
+            <!--<queue id="responseQueue"-->
+            <!--physicalName="response.queue"/>-->
+            <topic id="notificationTopic" 
+                   physicalName="notification.topic"/>
+
         </destinations>
 
 
@@ -72,8 +74,8 @@
         </managementContext>
 
         <!--<messageAuthorizationPolicy>-->
-            <!--<bean class="com.correlix.integration.server.activemq.security.DNNameMessageAuthorizationPolicy"-->
-                  <!--xmlns="http://www.springframework.org/schema/beans"/>-->
+        <!--<bean class="com.correlix.integration.server.activemq.security.DNNameMessageAuthorizationPolicy"-->
+        <!--xmlns="http://www.springframework.org/schema/beans"/>-->
         <!--</messageAuthorizationPolicy>-->
 
 
@@ -95,10 +97,10 @@
                 but this means that the plugins section is not usable.
                 because we probably need more plugins then defining the bean inside the plugins section is the only option left-->
             <!--<bean xmlns="http://www.springframework.org/schema/beans"-->
-                  <!--id="jaasCertificateAuthenticationPlugin"-->
-                  <!--class="com.correlix.integration.server.activemq.security.JaasCertificateAuthenticationPluginIgnoreVM">-->
-                <!--<property name="configuration"-->
-                          <!--value="${correlix.activemq.jaas.login}"/>-->
+            <!--id="jaasCertificateAuthenticationPlugin"-->
+            <!--class="com.correlix.integration.server.activemq.security.JaasCertificateAuthenticationPluginIgnoreVM">-->
+            <!--<property name="configuration"-->
+            <!--value="${correlix.activemq.jaas.login}"/>-->
             <!--</bean>-->
 
             <!-- this authorization config tells activemq that:
@@ -113,24 +115,24 @@
                  to com.correlix.* because it is the same path as the two other queues.
             -->
             <!--<authorizationPlugin>-->
-                <!--<map>-->
-                    <!--<authorizationMap>-->
-                        <!--<authorizationEntries>-->
-                            <!--<authorizationEntry-->
-                                    <!--queue="com.correlix.sharing.integ.queue"-->
-                                    <!--read="VMTransportGroup" write="Customers"/>-->
-                            <!--<authorizationEntry-->
-                                    <!--queue="com.correlix.sharing.input.queue"-->
-                                    <!--read="Customers" write="VMTransportGroup"/>-->
+            <!--<map>-->
+            <!--<authorizationMap>-->
+            <!--<authorizationEntries>-->
+            <!--<authorizationEntry-->
+            <!--queue="com.correlix.sharing.integ.queue"-->
+            <!--read="VMTransportGroup" write="Customers"/>-->
+            <!--<authorizationEntry-->
+            <!--queue="com.correlix.sharing.input.queue"-->
+            <!--read="Customers" write="VMTransportGroup"/>-->
 
-                            <!--<authorizationEntry topic="ActiveMQ.Advisory.>"-->
-                                                <!--read="Customers,VMTransportGroup"-->
-                                                <!--write="Customers,VMTransportGroup"-->
-                                                <!--admin="Customers,VMTransportGroup"/>-->
-                        <!--</authorizationEntries>-->
+            <!--<authorizationEntry topic="ActiveMQ.Advisory.>"-->
+            <!--read="Customers,VMTransportGroup"-->
+            <!--write="Customers,VMTransportGroup"-->
+            <!--admin="Customers,VMTransportGroup"/>-->
+            <!--</authorizationEntries>-->
 
-                    <!--</authorizationMap>-->
-                <!--</map>-->
+            <!--</authorizationMap>-->
+            <!--</map>-->
             <!--</authorizationPlugin>-->
 
 
@@ -140,10 +142,10 @@
                 the originatingDNName field of the message.
                 this will be enforced on any message sent to the queueName-->
             <!--<bean xmlns="http://www.springframework.org/schema/beans"-->
-                  <!--id="dnNameInterceptor"-->
-                  <!--class="com.correlix.integration.server.activemq.plugins.DNNameInterceptorPlugin">-->
-                <!--<property name="queueName"-->
-                          <!--value="com.correlix.sharing.integ.queue"/>-->
+            <!--id="dnNameInterceptor"-->
+            <!--class="com.correlix.integration.server.activemq.plugins.DNNameInterceptorPlugin">-->
+            <!--<property name="queueName"-->
+            <!--value="com.correlix.sharing.integ.queue"/>-->
             <!--</bean>-->
         </plugins>
 
@@ -201,11 +203,11 @@
              we currently use sslContext because its good for unit tests
              where its harder to send system properties -->
         <!--<sslContext>-->
-            <!--<sslContext id="sslContext" keyStoreType="JKS"-->
-                        <!--keyStore="${correlix.activemq.server.keystore}"-->
-                        <!--keyStorePassword="${correlix.activemq.server.keystore.password}"-->
-                        <!--trustStore="${correlix.activemq.server.truststore}"-->
-                        <!--trustStorePassword="${correlix.activemq.server.truststore.password}"/>-->
+        <!--<sslContext id="sslContext" keyStoreType="JKS"-->
+        <!--keyStore="${correlix.activemq.server.keystore}"-->
+        <!--keyStorePassword="${correlix.activemq.server.keystore.password}"-->
+        <!--trustStore="${correlix.activemq.server.truststore}"-->
+        <!--trustStorePassword="${correlix.activemq.server.truststore.password}"/>-->
         <!--</sslContext>-->
 
 

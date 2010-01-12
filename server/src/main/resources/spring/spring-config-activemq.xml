@@ -16,14 +16,15 @@
 
     <!-- configure a local vm connection factory, must be initialied after the broker.
         see: http://activemq.apache.org/vm-transport-reference.html -->
-    <!--<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"-->
-          <!--depends-on="ActiveMQBroker">-->
-        <!-- the vm transport consist of the vm scheme and the broker's name -->
-        <!--<property name="brokerURL" value="vm://AMQBroker?create=false&amp;waitForStart=10000"/>-->
-        <!-- the user and password for VM transport, it is hard coded in VmTransportLoginModule -->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"
+          depends-on="ActiveMQBroker">
+         <!--the vm transport consist of the vm scheme and the broker's name -->
+        <property name="brokerURL" value="vm://AMQBroker?create=false&amp;waitForStart=1000"/>
+         <!--the user and password for VM transport, it is hard coded in VmTransportLoginModule -->
         <!--<property name="userName" value="VMTransportUser"/>-->
         <!--<property name="password" value="VMTransportPassword"/>-->
-    <!--</bean>-->
+    </bean>
+
 
 
 </beans>

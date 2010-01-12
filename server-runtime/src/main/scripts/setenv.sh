@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # must execute this from the application's home folder, e.g home$>./bin/server.sh
-server_home=`pwd`
+server_home=$(cd `dirname $0`/..; pwd)
 server_conf=${server_home}/conf
 
 #export server_home

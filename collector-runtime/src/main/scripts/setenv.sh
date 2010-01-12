@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # must execute this from the application's home folder, e.g home$>./bin/collector.sh
-collector_home=`pwd`
+collector_home=$(cd `dirname $0`/..; pwd)
 collector_conf=${collector_home}/conf
 
 
@@ -17,7 +17,10 @@ fi
 # the second sed command will remove comment lines starting with #.
 # the last sed command removes empty lines.
 # ------------------------------------------------------------------
-JAVAOPTS=`cat ${collector_conf}/$1.properties | sed s:'${collector_home}':${collector_home}:g | sed '/^\#/d' | sed '/^$/d'`
+JAVAOPTS=`cat ${collector_conf}/$1.properties | sed s:'${collector_home}':${collector_home}:g  | sed '/^\#/d' | sed '/^$/d'`
+
+
+
 for i in ${JAVAOPTS}
 do
     # if the file content is empty, then it will return the input string
@@ -77,5 +80,6 @@ echo '----------------------------------------'
 
 export JAVA_OPTS
 export CLASSPATH
+export JAVA
 
 

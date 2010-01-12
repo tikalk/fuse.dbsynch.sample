@@ -83,3 +83,19 @@ Unit tests with xa will work only with a data base that supports xa, also, an ac
 
 
 
+PubSub
+to demonstrait pubsub domain:
+
+the server publishes a notification to notification.topic every some interval.
+see:
+/server/src/main/resources/spring/spring-config-notifier.xml
+
+both the producer and collector subscribe to this topic and receive notifications.
+see:
+/collector/src/main/resources/spring/spring-config-notification.xml
+/producer/src/main/resources/spring/spring-config-notification.xml
+
+ the collector can also be a durable subscriber,set the property durable=true in
+  collector.properties
+  the client id for the collector durable subscription is passed in the
+  collector.properties file. to run two instances change the client id for each execution.

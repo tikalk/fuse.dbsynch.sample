@@ -18,7 +18,7 @@
 
     <properties>
         <!-- to install to another location run maven with -Dcommand-line-home=path to home -->
-        <producer-home>${project.build.directory}/home</producer-home>
+        <producer-home>${basedir}/home</producer-home>
     </properties>
 
 
@@ -80,7 +80,7 @@
                         </goals>
                         <configuration>
                             <tasks>
-                                <tar destfile="${project.build.directory}/${artifactId}-${version}.tar.gz"
+                                <tar destfile="${producer-home}/${artifactId}-${version}.tar.gz"
                                      compression="gzip">
                                     <tarfileset dir="${producer-home}"
                                                 preserveLeadingSlashes="true">
@@ -119,6 +119,23 @@
                     </execution>
                 </executions>
             </plugin>
+
+             <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${producer-home}</directory>
+                            <includes>
+                                <include>**/*</include>
+                                <!--<include>bin/</include>-->
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            
         </plugins>
     </build>
 

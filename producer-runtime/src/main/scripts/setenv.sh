@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # must execute this from the application's home folder, e.g home$>./bin/producer.sh
-producer_home=`pwd`
+producer_home=$(cd `dirname $0`/..; pwd)
 producer_conf=${producer_home}/conf
 
 

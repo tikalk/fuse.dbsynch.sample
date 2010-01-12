@@ -2,3 +2,7 @@
 *.ipr
 *.iws
 *target
+collector-runtime/home/
+producer-runtime/home/
+server-runtime/home/
+

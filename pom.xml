@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <name>dbsynch: parent</name>
 
-
+    <!-- stam comment -->
 
     <modules>
         <module>common</module>

@@ -41,6 +41,22 @@
         </pluginRepository>
     </pluginRepositories>
 
+
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>nexus release</name>
+            <url>http://localhost:8088/nexus/content/repositories/releases</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>nexus snapshots</name>
+            <url>http://localhost:8088/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+
     <!--<profiles>-->
     <!--<profile>-->
     <!--<id>commandLine</id>-->
